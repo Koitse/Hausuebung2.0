@@ -1,30 +1,29 @@
 package net.htlgrieskirchen.pos2.kaltseisSebastian;
 
-import java.io.FileReader;
 import java.util.Scanner;
 
 public class NumberTester {
 
     public String file;
-    public TestNumber oddTester;
-    public TestNumber primeTester;
-    public TestNumber palindromeTester;
+    public NumberTest oddTester;
+    public NumberTest primeTester;
+    public NumberTest palindromeTester;
 
     public NumberTester(String file) {
         this.file = file;
     }
 
-    public void setOddEvenTester(TestNumber oddTester)
+    public void setOddEvenTester(NumberTest oddTester)
     {
             this.oddTester = oddTester;
     }
 
-    public void setPrimeTester(TestNumber primeTester)
+    public void setPrimeTester(NumberTest primeTester)
     {
         this.primeTester = primeTester;
     }
 
-    public void setPalindromeTester(TestNumber palindromeTester)
+    public void setPalindromeTester(NumberTest palindromeTester)
     {
         this.palindromeTester = palindromeTester;
     }
@@ -41,28 +40,25 @@ public class NumberTester {
                temp = line.split("");
             }
 
-            switch (line)
-            {
-
-                case "1" : setOddEvenTester((odd)->(odd%2==0));
+            switch (line) {
+                case "1" -> {
+                    setOddEvenTester((odd) -> (odd % 2 == 0));
                     System.out.println("EVEN");
-                break;
-
-                case "2": TestNumber isPrime = (s)->{
-
-                    return false;
-                };
-                break;
-                case "3": setPalindromeTester((palindromeTester)->
+                    setOddEvenTester((oddTester) -> (oddTester % 2 != 0));
+                    System.out.println("NOT EVEN");
+                }
+                case "2" -> {
+                    setPrimeTester((primeTester) -> (primeTester / 2 == 0) && (primeTester / 3 == 0));
+                    System.out.println("PRIME");
+                }
+                case "3" -> setPalindromeTester((palindromeTester) ->
                 {
-                  String palin =  Integer.toString(palindromeTester);
-                  if(palin.endsWith("321"))
-                  {
-                      System.out.println("PALINDROME");
-                  }
-                  return true;
+                    String palin = Integer.toString(palindromeTester);
+                    if (palin.endsWith("321")) {
+                        System.out.println("PALINDROME");
+                    }
+                    return true;
                 });
-
             }
 
         }

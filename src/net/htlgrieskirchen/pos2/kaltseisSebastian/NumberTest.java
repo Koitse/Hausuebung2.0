@@ -1,5 +1,5 @@
 package net.htlgrieskirchen.pos2.kaltseisSebastian;
 
-public interface TestNumber {
+public interface NumberTest {
     boolean testNumber(int number);
 }
