@@ -30,18 +30,40 @@ public class NumberTester {
     }
 
     public void testFile(){
-        this.file = "C:\\Users\\Sebastian\\Documents\\KaltseisSebastian";
+        this.file = "C:\\Users\\Sebastian\\Documents\\Hausuebung2.0";
         Scanner scanner = new Scanner(this.file);
         while (scanner.hasNextLine())
         {
             String line = scanner.nextLine();
-            String[] temp;
+            String[] temp = new String[0];
             if(!line.equals("0"))
             {
                temp = line.split("");
             }
 
+            switch (line)
+            {
 
+                case "1" : setOddEvenTester((odd)->(odd%2==0));
+                    System.out.println("EVEN");
+                break;
+
+                case "2": TestNumber isPrime = (s)->{
+
+                    return false;
+                };
+                break;
+                case "3": setPalindromeTester((palindromeTester)->
+                {
+                  String palin =  Integer.toString(palindromeTester);
+                  if(palin.endsWith("321"))
+                  {
+                      System.out.println("PALINDROME");
+                  }
+                  return true;
+                });
+
+            }
 
         }
     }
