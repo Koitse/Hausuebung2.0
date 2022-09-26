@@ -42,10 +42,19 @@ public class NumberTester {
 
             switch (line) {
                 case "1" -> {
-                    setOddEvenTester((odd) -> (odd % 2 == 0));
-                    System.out.println("EVEN");
-                    setOddEvenTester((oddTester) -> (oddTester % 2 != 0));
-                    System.out.println("NOT EVEN");
+                    setOddEvenTester((odd) -> {
+                        if(odd%2==0)
+                        {
+                            System.out.println("EVEN");
+                        }
+                   else
+                        {
+                            System.out.println("NOT EVEN");
+                        }
+                    return true;
+                    })
+                    ;
+
                 }
                 case "2" -> {
                     setPrimeTester((primeTester) -> (primeTester / 2 == 0) && (primeTester / 3 == 0));
