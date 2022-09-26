@@ -35,10 +35,13 @@ public class NumberTester {
         while (scanner.hasNextLine())
         {
             String line = scanner.nextLine();
+            String[] temp;
             if(!line.equals("0"))
             {
-                String[] temp= line.split("");
+               temp = line.split("");
             }
+
+
 
         }
     }
